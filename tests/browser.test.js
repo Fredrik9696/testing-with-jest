@@ -1,4 +1,5 @@
 const { Builder, By, until } = require('selenium-webdriver');
+const { peek } = require('../src/stack');
 require('geckodriver');
 
 const fileUnderTest = 'file://' + __dirname.replace(/ /g, '%20') + '/../dist/index.html';
@@ -31,4 +32,14 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.sendKeys("Bananer");
 		await alert.accept();
 	});
+});
+
+test('Clicking "Pusha till stacken?" should replace the top_of_stack', async () => {
+    let push = await driver.findElement(By.id('push'));
+    await push.click();
+    let alert = await driver.switchTo().alert();
+	await alert.sendKeys("Hejsan");
+	await alert.accept();
+    let stack = await driver.findElement(By.id('top_of_stack')).getText();
+    expect(stack).toEqual("Hej");
 });
