@@ -3,7 +3,7 @@ const stack = require('../src/stack');
 test('Pop function on one item in stack = peek on stack = undefined', () => {
     stack.push("Hejsan");
     stack.pop();
-    expect(stack.peek()).toBeDefined();
+    expect(stack.peek()).toBeUndefined();
 });
 
 test('peek on empty stack returns undefined', () => {

@@ -41,5 +41,5 @@ test('Clicking "Pusha till stacken?" should replace the top_of_stack', async () 
 	await alert.sendKeys("Hejsan");
 	await alert.accept();
     let stack = await driver.findElement(By.id('top_of_stack')).getText();
-    expect(stack).toEqual("Hej");
+    expect(stack).toEqual("Hejsan");
 });
