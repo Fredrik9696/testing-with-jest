@@ -10,5 +10,8 @@
     "test": "jest tests"
   },
   "author": "Fredrik Siöström",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.13.6"
+  }
 }
